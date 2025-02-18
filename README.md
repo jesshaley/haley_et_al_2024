@@ -1,18 +1,16 @@
 # haley_et_al_2024
 > Analysis package for Haley et al. (2024)
 
-These codes were written and used to analyze intracellular waveforms and extracellular nerve recordings from bursting neurons. Custom violin and stacked bar graph plotting scripts are included. This package is comprehensive and includes all codes used for this paper. Some of these codes are only useful for this particular set of experiments and will need to be adapted for other uses.
+This code was written and used to analyze the behavior of *C. elegans* exploring environments with small, dilute patches of bacteria. This package is comprehensive and includes all code used for this paper. Some files are only useful for this particular set of experiments and require adaption for other uses.
 
 
 ## Software
 
 I used the following software for analysis and figure production:
-- pClamp 10.5
-- Spike2 v6.04
-- MATLAB 2018a
-- R v3.5.0
-- RStudio 1.1.456
-- Adobe Illustrator CC 2017
+- [MATLAB 2024a](https://www.mathworks.com/products/matlab.html)
+- [WormLab](https://www.mbfbioscience.com/products/wormlab/)
+- Adobe Illustrator 2024
+- Adobe Photoshop 2024
 
 
 ## File List
@@ -49,7 +47,7 @@ I used the following software for analysis and figure production:
 
 ## Links
 
-- Paper: [https://elifesciences.org/articles/41877](https://elifesciences.org/reviewed-preprints/103191)
+- Paper: https://elifesciences.org/articles/41877
 - Git Repository: https://github.com/jesshaley/haley_et_al_2024
 - Related projects: https://github.com/shreklab
 
