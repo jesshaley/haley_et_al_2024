@@ -19,6 +19,8 @@ This code was written and used to analyze the behavior of *C. elegans* exploring
    - [Estimate bacterial density](#OP50-GFP)
    - [Model the exploitation decision](#model)
    - [Statistical analysis](#statistics)
+   - [Figures](#figures)
+   - [Figure supplements](#supplements)
 3. [Links](#links)
 4. [Contact](#contact)
 
@@ -102,6 +104,34 @@ I used the following software for analysis and figure production:
 - `benjaminiHochberg.m` :
 - `silvermansTest.m` :
 - `writeSourceData.m` :
+
+### Figures <a name="figures"></a>
+- `fig1.m` :
+- `fig2.m` :
+- `fig3.m` :
+- `fig4.m` :
+
+### Figure supplements <a name="supplements"></a>
+- `figS1.m` :
+- `figS2.m` :
+- `figS3.m` :
+- `figS4.m` :
+- `figS5.m` :
+- `figS6.m` :
+- `figS7.m` :
+- `figS8.m` :
+- `figS9.m` :
+- `figS10.m` :
+- `figS11.m` :
+- `figS12.m` :
+- `figS13.m` :
+- `figS14.m` :
+- `figS15.m` :
+- `figS16.m` :
+- `figS17.m` :
+- `figS18.m` :
+- `figS19.m` :
+- `VideoSupp.m` :
 
 ## Links <a name="links"></a>
 
