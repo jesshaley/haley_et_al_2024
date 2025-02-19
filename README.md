@@ -6,13 +6,13 @@ This code was written and used to analyze the behavior of *C. elegans* exploring
 # Table of Contents
 1. [Software](#software)
 2. [File list](#file-list)
-   1. [Compile metadata](#foragingInfo)
+   - [Compile metadata](#foragingInfo)
      - [Get file metadata](#metadata)
      - [Get arena properties](#arena)
      - [Get lawn properties](#lawn)
      - [Image registration](#registration)
      - [Create grids](#grid)
-   2. [Analyze worm behavior](#behavior)
+   - [Analyze worm behavior](#behavior)
      - [Analyze worm movement and identify encounters](#analysis)
      - [Plot behavior](#plot)
 3. [Links](#links)
@@ -48,13 +48,13 @@ I used the following software for analysis and figure production:
       - `getLawnsTemplate.m` : creates an estimate of the locations of bacterial lawns in the behavioral arena given information about size and spacing of a single lawn or an isometric grid of lawns.
       - `getLawnsThreshold.m` : creates an estimate of the locations of bacterial lawns in the behavioral arena given a frame from the video (ideally without worms) and information about the expected position of the lawns using image processing and morphological operations. `getLawnsThreshold.m` expects that the image used is not necessarily from the experimental video itself and enables translation, rotation, and scaling of the lawn mask to match the experimental video.
       - `getLawnsFilter.m` : creates an estimate of the locations of bacterial lawns in the behavioral arena given a VideoReader object (ideally for a video without worms) and information about the expected position of the lawns using image processing and morphological operations. `getLawnsFilter.m` expects a video where a dark object (e.g. black cardstock) is passed between the lightsource and the experimental plate, creating a "darkfield" image of plate. The cardstock scatters the light creating increased contrast of the bacteral lawns, enabling automatic identification of the lawn edges. `getLawnsFilter.m` expects that the video used contains an arena that is not necessarily in the same position and orientation as the experimental video itself and enables translation, rotation, and scaling of the lawn mask to match the experimental video.
-      - `getLawnsCircle.m` : creates an estimate of the locations of bacterial lawns in the behavioral arena given a VideoReader object (ideally for a video without worms) and information about the expected position of the lawns using image processing and morphological operations. `getLawnsCircle.m` expects a video where a dark object (e.g. black cardstock) is passed between the lightsource and the experimental plate, creating a "darkfield" image of plate. The cardstock scatters the light creating increased contrast of the bacteral lawns, enabling automatic identification of the lawn edges. `getLawnsCircle.m` uses [`imfindcircles`](https://www.mathworks.com/help/images/ref/imfindcircles.html?searchHighlight=imfindcircles&s_tid=srchtitle_support_results_1_imfindcircles) to  identify the putative lawns on every frame and creates a weighted average image. `getLawnsCircle.m` expects that the video used contains an arena that is not necessarily in the same position and orientation as the experimental video itself and enables translation, rotation, and scaling of the lawn mask to match the experimental video.
+      - `getLawnsCircle.m` : creates an estimate of the locations of bacterial lawns in the behavioral arena given a VideoReader object (ideally for a video without worms) and information about the expected position of the lawns using image processing and morphological operations. `getLawnsCircle.m` expects a video where a dark object (e.g. black cardstock) is passed between the lightsource and the experimental plate, creating a "darkfield" image of plate. The cardstock scatters the light creating increased contrast of the bacteral lawns, enabling automatic identification of the lawn edges. `getLawnsCircle.m` uses [`imfindcircles`](https://www.mathworks.com/help/images/ref/imfindcircles.html) to identify the putative lawns on every frame and creates a weighted average image. `getLawnsCircle.m` expects that the video used contains an arena that is not necessarily in the same position and orientation as the experimental video itself and enables translation, rotation, and scaling of the lawn mask to match the experimental video.
     - `getManualLawns.m` : updates lawn locations with any manual corrections that were made in Adobe Photoshop (when needed).
 
   - #### Image registration <a name="registration"></a>
 
-    - `registerImage.m` :
-    - `transformLabeledImage.m` : takes in an image and its properties as a structure and performs given image transformations (i.e. registrations); performed on the grids (hexagon, diamond, triangle) to register them to arena.
+    - `registerImage.m` : takes in two images, detects SURF features (using [`detectSURFFeatures`](https://www.mathworks.com/help/vision/ref/detectsurffeatures.html)) of each, estimates a 2D rigid transformation (using [`estgeotform2d`](https://www.mathworks.com/help/vision/ref/estgeotform2d.html)), and performs the transformation (using [`imwarp`](https://www.mathworks.com/help/images/ref/imwarp.html)). 
+    - `transformLabeledImage.m` : takes in an image and its properties as a structure and performs given image transformations (i.e. registrations); performed on the grids (hexagon, diamond, triangle) to register them to arena. This function use simple geometric tranformations (e.g., [`imrotate`](https://www.mathworks.com/help/images/ref/imrotate.html)) and is intended for use with images that have been labeled using [`bwlabel`](https://www.mathworks.com/help/images/ref/bwlabel.html). If using a video frame, use `registerImage.m` for more accurate image registration.
 
   - #### Create grids <a name="grid"></a>
 
