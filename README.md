@@ -64,14 +64,14 @@ I used the following software for analysis and figure production:
 ### Analyze worm behavior <a name="behavior"></a>
 - `analyzeForaging.m` :
 
-  -  #### Analyze worm movement and identify encounters <a name="analysis"></a>
+   -  #### Analyze worm movement and identify encounters <a name="analysis"></a>
     
-    - `analyzeWormLabTracks.m` : takes mid-point data exported from WormLab and computes numerous metrics related to the worm's position, velocity, and turning behavior as well as it's location relative to the arena and lawns.
-    - `analyzeEncounters.m` : uses the location of animal(s) and lawn(s) to identify encounters and properties of those encounters.
+      - `analyzeWormLabTracks.m` : takes mid-point data exported from WormLab and computes numerous metrics related to the worm's position, velocity, and turning behavior as well as it's location relative to the arena and lawns.
+       - `analyzeEncounters.m` : uses the location of animal(s) and lawn(s) to identify encounters and properties of those encounters.
    
- - #### Plot behavior <a name="plot"></a>
-   - `plotTracks.m` :
-   - `createVideo.m` : writes a video to file showing either the tracks of an animal or the original video downsampled with scale bar and time stamp showing.
+    - #### Plot behavior <a name="plot"></a>
+      - `plotTracks.m` :
+      - `createVideo.m` : writes a video to file showing either the tracks of an animal or the original video downsampled with scale bar and time stamp showing.
 
 
 ## Links <a name="links"></a>
