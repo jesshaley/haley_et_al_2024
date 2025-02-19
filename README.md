@@ -1,5 +1,5 @@
 # haley_et_al_2024
-> Analysis package for [Haley et al. (2024)](https://elifesciences.org/articles/41877)
+> Analysis package for [Haley et al. (2024)](https://doi.org/10.7554/eLife.103191.1)
 
 This code was written and used to analyze the behavior of *C. elegans* exploring environments with small, dilute patches of bacteria. This package is comprehensive and includes all code used for this paper. Some files are only useful for this particular set of experiments and require adaption for other uses.
 
@@ -105,7 +105,7 @@ I used the following software for analysis and figure production:
 
 ## Links <a name="links"></a>
 
-- Paper: https://elifesciences.org/articles/41877
+- Paper: https://doi.org/10.7554/eLife.103191.1
 - Git Repository: https://github.com/jesshaley/haley_et_al_2024
 - Related projects: https://github.com/shreklab
 
